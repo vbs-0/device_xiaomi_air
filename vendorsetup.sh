@@ -1,0 +1,3 @@
+add_lunch_combo omni_air-user
+add_lunch_combo omni_air-userdebug
+add_lunch_combo omni_air-eng
