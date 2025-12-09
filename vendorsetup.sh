@@ -1,3 +1,3 @@
-add_lunch_combo omni_air-user
-add_lunch_combo omni_air-userdebug
-add_lunch_combo omni_air-eng
+add_lunch_combo lineage_air-trunk_staging-user
+add_lunch_combo lineage_air-trunk_staging-userdebug
+add_lunch_combo lineage_air-trunk_staging-eng
