@@ -1,3 +1,0 @@
-service vendor.identity-mitee /vendor/bin/hw/android.hardware.identity-service.mitee@4.0
-    class hal
-    user system
