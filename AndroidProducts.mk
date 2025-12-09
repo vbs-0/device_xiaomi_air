@@ -1,7 +1,7 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device.mk
+    $(LOCAL_DIR)/lineage_air.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_air-user \
-    omni_air-userdebug \
-    omni_air-eng
+    lineage_air-trunk_staging-user \
+    lineage_air-trunk_staging-userdebug \
+    lineage_air-trunk_staging-eng
