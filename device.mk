@@ -49,9 +49,9 @@ PRODUCT_COPY_FILES += \
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/vintf/manifest.xml
 DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/compatibility_matrix.xml
 
-# Init RC Files
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir/etc/init,$(TARGET_COPY_OUT_VENDOR)/etc/init)
+# Init RC Files (disabled - conflicts with ROM's Soong HAL modules)
+# PRODUCT_COPY_FILES += \
+#     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir/etc/init,$(TARGET_COPY_OUT_VENDOR)/etc/init)
 
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/air/air-vendor.mk)
