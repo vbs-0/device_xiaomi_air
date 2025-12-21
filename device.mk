@@ -41,9 +41,15 @@ PRODUCT_PACKAGES += \
     init.mt6835.rc \
     init.mt6835.usb.rc
 
-# Copy fstab
+# ✅ CRITICAL: Copy fstab to VENDOR_RAMDISK (GKI mode)
+# ❌ OLD (WRONG): TARGET_COPY_OUT_RAMDISK → puts ramdisk in boot.img
+# ✅ NEW (CORRECT): TARGET_COPY_OUT_VENDOR_RAMDISK → puts ramdisk in vendor_boot.img
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.mt6835:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6835
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6835:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.mt6835
+
+# ✅ Additional ramdisk files for vendor_boot
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6835:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt6835
 
 # VINTF Manifests
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/vintf/manifest.xml
