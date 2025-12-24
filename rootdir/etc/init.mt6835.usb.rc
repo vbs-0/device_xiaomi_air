@@ -1,0 +1,17 @@
+# USB configuration for MT6835
+# Copyright (C) 2024 The Android Open Source Project
+# SPDX-License-Identifier: Apache-2.0
+
+on boot
+    # USB
+    mkdir /dev/usb-ffs 0770 shell shell
+    mkdir /dev/usb-ffs/adb 0770 shell shell 
+    mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
+    
+    setprop sys.usb.configfs 1
+    setprop sys.usb.controller "musb-hdrc"
+    setprop sys.usb.ffs.aio_compat 1
+
+on property:sys.usb.config=adb
+    write /config/usb_gadget/g1/idVendor 0x0e8d
+    write /config/usb_gadget/g1/idProduct 0x201c

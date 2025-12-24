@@ -1,0 +1,12 @@
+#
+# system.prop for air
+#
+
+rild.libpath=mtk-ril.so
+rild.libargs=-d /dev/ttyC0
+
+# Display
+ro.sf.lcd_density=440
+
+# USB
+sys.usb.controller=musb-hdrc
